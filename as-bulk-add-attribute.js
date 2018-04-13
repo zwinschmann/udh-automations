@@ -11,7 +11,7 @@ teal.rulesArr2Obj = function (arr) {
 teal.createRule = function (data) {
     var d = data || {};
     try {
-        // create new rule for IS ASSIGNED for the event atttribute we're building the Visitor-level attribute from
+        // create new rule for IS ASSIGNED AND NOT EMPTY for the event atttribute we're building the Visitor-level attribute from
         var eventAttrId = gApp.utils.quantifier.getQuantifierByName(d.dataSourceAttr).get('id');
         // fully qualified id from event attri to check if rule exists
         var fullyQualId = gApp.inMemoryModels.quantifierCollection.get(eventAttrId).attributes.fullyQualifiedId;
