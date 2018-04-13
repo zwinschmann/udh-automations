@@ -28,7 +28,7 @@ try {
                                     text: 'Submit',
                                     location: 'right',
                                     handler: function () {
-                                        //console.log($(bulkAddAttributes.$el).find('#bulkAddAttributesTestarea').val());
+                                        console.log($(bulkAddAttributes.$el).find('#bulkAddAttributesTestarea').val());
                                         teal.addAttribute(JSON.parse($(bulkAddAttributes.$el).find('#bulkAddAttributesTestarea').val()));
                                     }
                                 }]
