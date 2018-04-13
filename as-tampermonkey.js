@@ -10,10 +10,18 @@
 
 /************** Bulk Add AS Attributes Start ***************************/
 try {
-    console.log('Bulk Add AS Attributes Loading');
+    console.log('AS Bulk Add Attributes Scripts Loading');
+
+    var script = document.createElement('script');
+    script.onload = function () {
+        console.log('AS Bulk Add Attributes Scripts Loaded');
+    };
+    script.src = "https://raw.githubusercontent.com/zwinschmann/udh-automations/master/as-bulk-add-attribute.js";
+    document.head.appendChild(script);    
+
     window.addEventListener("hashchange", setupBulkAddAttributesButton, false);
 
-    function setupBulkAddAttributesButton() {
+    function addBulkAddAttributesButton() {
         if (location.hash.indexOf('#audience-stream/attributes') != -1) {
             //Add the button
             if (!$('#bulkAddAttributes').length) {
@@ -23,13 +31,14 @@ try {
                         var bulkAddAttributes = new gApp.views.SimpleModalView({
                             model: new Backbone.Model({
                                 title: "Bulk Add Attributes",
-                                message: "<textarea cols='65' rows='35' id='bulkAddAttributesTestarea'></textarea>",
+                                message: "<textarea cols='60' rows='30' id='bulkAddAttributesTextarea'></textarea>",
                                 buttons: [{
                                     text: 'Submit',
                                     location: 'right',
                                     handler: function () {
-                                        console.log($(bulkAddAttributes.$el).find('#bulkAddAttributesTestarea').val());
-                                        teal.addAttribute(JSON.parse($(bulkAddAttributes.$el).find('#bulkAddAttributesTestarea').val()));
+                                        //console.log($(bulkAddAttributes.$el).find('#bulkAddAttributesTestarea').val());
+                                        if(!teal) throw new Error('Tealium Scope Does Not Exist');
+                                        else teal.addAttribute(JSON.parse($(bulkAddAttributes.$el).find('#bulkAddAttributesTextarea').val()));
                                     }
                                 }]
                             })
@@ -40,8 +49,8 @@ try {
             }
         }
     }
-    console.log('Bulk Add AS Attributes Loaded');
+    console.log('AS Bulk Add Attributes Button Added');
 } catch (e) {
-    console.log('Bulk Add AS Attributes Failed: ' + e);
+    console.log('AS Bulk Add Attributes Script Failed: ' + e);
 }
 /************** Bulk Add AS Attributes End ***************************/
