@@ -41,7 +41,6 @@ teal.labelsArr2Obj = function (arr) {
         if (arr[i] !== undefined) rObj[teal.strToTitleCase(arr[i].get('name'))] = arr[i].get('id');
     return rObj;
 }
-        lblCols = ["red", "orange", "green", "blue", "violet", "purple"];
 // get transformation type, eg. set number, set string etc.
 teal.getTransType = function (type) {
     // unify type input to enable consistent matching
