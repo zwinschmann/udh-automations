@@ -1,11 +1,12 @@
 // ==UserScript==
 // @name         AS Bulk Add Attribute
 // @namespace    AudienceStream
-// @require      https://raw.githubusercontent.com/zwinschmann/udh-automations/master/as-bulk-add-attribute.js
-// @version      0.1
+// @require      
+// @version      0.4
 // @description  Automation of visitor/visit level attribbute creation
 // @author       Sven Meyer
 // @include      http*//my.tealiumiq.com/datacloud/*
+// @grant        none
 // ==/UserScript==
 
 /************** Bulk Add AS Attributes Start ***************************/
