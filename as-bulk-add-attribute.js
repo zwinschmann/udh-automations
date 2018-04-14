@@ -1,4 +1,4 @@
-
+console.log('Library LOADING...');
 /*****************
  * TEALIUM SCOPE *
  *****************/
@@ -423,3 +423,4 @@ teal.addAttribute = function (data) {
         }))
     }
 }
+console.log('Library LOADED!');
