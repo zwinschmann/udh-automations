@@ -1,4 +1,4 @@
-console.log('Library LOADING...');
+console.log('AS Bulk Add Attributes Library LOADING...');
 /*****************
  * TEALIUM SCOPE *
  *****************/
@@ -104,7 +104,7 @@ teal.getAttributeType = function (type) {
     // data types object
     var dataType = {"badge":{"value":"visitor_badge","displayName":"badge","description":"Badges are ways of identifying segments of users (ex: Frequent_Visitor)","prefix":"badges.","icon":"fa-shield","color":"#7E4FC4","view":"QuantifierBadgeView","viewLabel":"badge","perspectiveType":"badges","scope":["Visitor"],"details":{"description":"Captures a special milestone or state of the visitor","example":"&lt;p class=&quot;fourtabs&quot;&gt;var datalayer = {&lt;br &#x2F;&gt;\t&lt;span class=&quot;solution&quot;&gt;vip&lt;&#x2F;span&gt;: true &lt;br &#x2F;&gt;}&lt;&#x2F;p&gt;","useCase":[{"name":"VIP"},{"name":"Window Shopper"},{"name":"Cart Abandoner"},{"name":"Active Shopper"},{"name":"Frequent Visitor"}]}},"number":{"value":"visitor_metric","displayName":"number","description":"Stores numerical data (ex: Return_Visit_Count)","prefix":"metrics.","icon":"fa-bar-chart","color":"#405BBF","scope":["Event","Visitor","Current Visit"],"perspectiveType":"metric","details":{"description":"Stores a numeric value","example":"&lt;p class=&quot;fourtabs&quot;&gt;var datalayer = {&lt;br &#x2F;&gt;\t&lt;span class=&quot;solution&quot;&gt;lifetime_total_value&lt;&#x2F;span&gt;: 100 &lt;br &#x2F;&gt;}&lt;&#x2F;p&gt;","useCase":[{"name":"Total Cart Value"},{"name":"Number of Purchases Made"}]}},"string":{"value":"visitor_property","displayName":"string","description":"Stores string properties. (ex: Favorite_product)","prefix":"properties.","icon":"fa-quote-right","color":"#9F3AAA","perspectiveType":"property","scope":["Event","Visitor","Current Visit"],"details":{"description":"Stores a text value","example":"&lt;p class=&quot;fourtabs&quot;&gt;var datalayer = {&lt;br &#x2F;&gt;\t&lt;span class=&quot;solution&quot;&gt;last_product_viewed&lt;&#x2F;span&gt;: &quot;shoes&quot; &lt;br &#x2F;&gt;}&lt;&#x2F;p&gt;","useCase":[{"name":"Last Page Viewed"},{"name":"Last Product Purchased"}]}},"boolean":{"value":"visitor_flag","displayName":"boolean","description":"Stores true or false values (ex: Return_Visitor)","prefix":"flags.","icon":"fa-flag","color":"#674BC3","perspectiveType":"flag","scope":["Event","Visitor","Current Visit"],"details":{"description":"Stores a true or false value","example":"&lt;p class=&quot;fourtabs&quot;&gt;var datalayer = {&lt;br &#x2F;&gt;\t&lt;span class=&quot;solution&quot;&gt;has_purchased&lt;&#x2F;span&gt;: true &lt;br &#x2F;&gt;}&lt;&#x2F;p&gt;","useCase":[{"name":"Has Added Items to Cart"},{"name":"Has Viewed Item"}]}},"date":{"value":"visitor_date","displayName":"date","description":"Stores a date value (ex: Feb 18, 1982 10:34am)","prefix":"dates.","icon":"fa-calendar","color":"#B2305B","perspectiveType":"date","scope":["Visitor","Current Visit"],"details":{"description":"Stores a date (in milli-seconds)","example":"&lt;p class=&quot;fourtabs&quot;&gt;var datalayer = {&lt;br &#x2F;&gt;\t&lt;span class=&quot;solution&quot;&gt;last_checkout_date&lt;&#x2F;span&gt;: 1458578676733 &lt;br &#x2F;&gt;}&lt;&#x2F;p&gt;","useCase":[{"name":"Last Checkout Date"},{"name":"Last Visited Date"}]}},"tally":{"value":"visitor_metric_set","displayName":"tally","description":"Stores a set of numbers","prefix":"metric_sets.","icon":"fa-list","color":"#BB6C3E","perspectiveType":"metric_set","scope":["Visitor","Current Visit"],"details":{"description":"Stores a list of key value pairs where the values are numbers. (This attribute also generates a favorite attribute that captures the item in this list that holds the highest number value)","example":"&lt;p class=&quot;fourtabs&quot;&gt;var datalayer = {&lt;br &#x2F;&gt;\t&lt;span class=&quot;solution&quot;&gt;browsers_used&lt;&#x2F;span&gt;: {Chrome : 10, FireFox : 5, Safari : 2} &lt;br &#x2F;&gt;}&lt;&#x2F;p&gt;","useCase":[{"name":"Product Categories Viewed"},{"name":"Pages Viewed"},{"name":"Products Purchased"}]}},"setofstrings":{"value":"visitor_property_set","displayName":"Set of Strings","description":"Stores a unique set of strings","prefix":"property_sets.","icon":"fa-align-left","color":"#39AC82","perspectiveType":"property_set","scope":["Visitor","Current Visit"],"details":{"description":"Stores a collection of unique text values","example":"&lt;p class=&quot;fourtabs&quot;&gt;var datalayer = {&lt;br &#x2F;&gt;\t&lt;span class=&quot;solution&quot;&gt;product_categories&lt;&#x2F;span&gt;: [&quot;shirts&quot;, &quot;shoes&quot;, &quot;hats&quot;] &lt;br &#x2F;&gt;}&lt;&#x2F;p&gt;","useCase":[{"name":"Product Categories Viewed"},{"name":"Pages Viewed"},{"name":"Products Purchased"}]}},"funnel":{"value":"funnel","displayName":"funnel","description":"Stores a predefined ordered list of events. (ex: Payment Funnel)","prefix":"funnels.","icon":"fa-filter","color":"#5785C7","transformationButtonLabel":"Create A Step","transformationSectionLabel":"steps","transformationSectionEmptyLabel":"Create A New Step","perspectiveType":"funnel","scope":["Visitor","Current Visit"],"details":{"description":"Stores an ordered list of milestones","example":"NA","useCase":[{"name":"Checkout Funnel"},{"name":"Purchase Funnel"},{"name":"Lead Gen Funnel"}]}},"timeline":{"value":"sequence","displayName":"timeline","description":"Stores an ordered list of events.","prefix":"sequences.","icon":"fa-ellipsis-h","color":"#C34D4B","transformationButtonLabel":"Create An Entry","transformationSectionLabel":"entries","transformationSectionEmptyLabel":"Create A New Entry","perspectiveType":"sequence","scope":["Visitor","Current Visit"],"details":{"description":"Stores an ordered list of events","example":"NA","useCase":[{"name":"Product Views"},{"name":"Product Purchases"}]}},"visitorid":{"value":"secondary_id","displayName":"Visitor ID","description":"Stores a value that is used to identify a visitor","prefix":"secondary_ids.","icon":"fa-user","color":"#915130","perspectiveType":"secondary_id","scope":["Visitor"],"details":{"description":"Stores a unique identifier for the visitor","example":"&lt;p class=&quot;fourtabs&quot;&gt;var datalayer = {&lt;br &#x2F;&gt;\t&lt;span class=&quot;solution&quot;&gt;rewards_member_id&lt;&#x2F;span&gt;: 123456789 &lt;br &#x2F;&gt;}&lt;&#x2F;p&gt;","useCase":[{"name":"Stitching Multiple Visitor Profiles Together"}]}}}
     return dataType[t] ? dataType[t] : {};
-}
+};
 // get attribute type id
 teal.getAttributeTypeId = function (typeid) {
     // unify scope input to enable consistent matching
@@ -112,7 +112,7 @@ teal.getAttributeTypeId = function (typeid) {
     // data type id
     var dataTypeId = {"badge":"badges","number":"metrics","string":"properties","boolean":"flags","date":"dates","tally":"metric_sets","setofstrings":"property_sets","funnel":"funnels","timeline":"sequences","visitorid":"secondary_ids"}
     return dataTypeId[tid] ? dataTypeId[tid] : "";
-}
+};
 // get badge data object
 teal.getBadgeData = function () {
     return new gApp.models.Badge({
@@ -124,7 +124,7 @@ teal.getBadgeData = function () {
         "selected": false,
         "num": 0
     });
-}
+};
 
 /***************************
  * CONFIGURATION FUNCTIONS *
@@ -164,7 +164,7 @@ teal.getLabelIds = function (labels) {
     }
     // return the array with the label ids
     return li;
-}
+};
 // create rule for event attribute
 teal.addRule = function (dataset) {
     var ds = dataset || {};
@@ -225,7 +225,7 @@ teal.addRule = function (dataset) {
     }
     // return rule object
     return r;
-}
+};
 // add basic enrichent for tealium attribute off of event attribute
 teal.addEnrichment = function (dataset) {
     var ds = dataset || {},
@@ -239,7 +239,7 @@ teal.addEnrichment = function (dataset) {
         lbl = ds.va_label || "",
         tto = gApp.inMemoryModels.transformationTypeCollection.get(teal.getTransType(type)[0]).attributes, // trans type object
         qc = gApp.inMemoryModels.quantifierCollection, // quantifier collection
-        allowedDataTypes = ["number", "string", "boolean"];
+        allowedDataTypes = ["number", "string"];
     if (type != "" && allowedDataTypes.indexOf(type) != -1) {
         if (!teal.isTransAssigned(trans, type, ds.ea_title, ds.va_title)) {
             if (tid && did && trigger) {
@@ -305,7 +305,7 @@ teal.addEnrichment = function (dataset) {
         teal.me += '<li><span style="color:red">Failed enrichment "' + teal.getTransType(type)[1] + '" for "' + ds.va_title + '"<br>Error: Unsupported Data Type - "' + teal.upperCaseFirstLetter(ds.va_type) + '"</span></li>';
     }
     return trans;
-}
+};
 // add attribute to udh including rule, labels and simple enrichment
 teal.addAttribute = function (data) {
     var a = {};
@@ -422,5 +422,5 @@ teal.addAttribute = function (data) {
             })
         }))
     }
-}
-console.log('Library LOADED!');
+};
+console.log('AS Bulk Add Attributes Library LOADED...');
